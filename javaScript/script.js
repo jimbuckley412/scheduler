@@ -21,4 +21,29 @@ $(function () {
     //
     // TODO: Add code to display the current date in the header of the page.
   });
-  
+  $(function showTime() {
+    var time = new Date();
+    var year = time.getFullYear();
+    var month = time.getMonth();
+    var date = time.getDate();
+    var hour = time.getHours();
+    var min = time.getMinutes();
+    var sec = time.getSeconds();
+    var MV = "AM";
+    if (hour >= 12) {
+      if(hour > 12) hour -= 12;
+      MV = "PM";
+    } else if(hour == 0) {
+      hr = 12;
+      MV= "AM";
+    }
+    hour = 
+      hour < 10 ? "0" + hour : hour;
+      min = mon < 10 ? "0" + min : min;
+      sec = sec < 10 ? "0" + sec : sec;
+    let currentTime = 
+    hour + ":" + min + ":" + sec + MV;
+  document.getElementById("clock").innerHTML = currentTime;
+  });
+
+  showTime();
